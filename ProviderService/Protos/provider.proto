@@ -1,0 +1,42 @@
+syntax = "proto3";
+package grpc_provider;
+
+import "google/protobuf/empty.proto";
+
+service ProviderService { 
+  rpc ListProviders (google.protobuf.Empty) returns (ListReply);
+  rpc GetProvider (GetProviderRequest) returns (ProviderReply);
+  rpc CreateProvider (CreateProviderRequest) returns (ProviderReply);
+  rpc DeleteProvider (DeleteProviderRequest) returns (ProviderReply);
+  rpc UpdateProvider (UpdateProviderRequest) returns (ProviderReply);
+
+  }
+
+message CreateProviderRequest {
+  string name = 1;
+  int32 region = 2;
+}
+
+message GetProviderRequest {
+  int32 id = 1;
+}
+
+message UpdateProviderRequest{
+    int32 id = 1;
+    string name = 2;
+    int32 region = 3;
+}
+
+message DeleteProviderRequest{
+    int32 id = 1;
+}
+
+message ListReply{
+    repeated ProviderReply Providers = 1;
+}
+
+message ProviderReply{
+    int32 id = 1;
+    string name = 2;
+    int32 region = 3;
+}

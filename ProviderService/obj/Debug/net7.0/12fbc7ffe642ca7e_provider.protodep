@@ -1,0 +1,3 @@
+obj\Debug\net7.0\Protos/Provider.cs \
+obj\Debug\net7.0\Protos/ProviderGrpc.cs: C:/Users/supru/.nuget/packages/grpc.tools/2.50.0/build/native/include/google/protobuf/empty.proto\
+ Protos/provider.proto
